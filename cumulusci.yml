@@ -1,0 +1,25 @@
+minimum_cumulusci_version: '3.0.0'
+project:
+    name: NPSP-Food-Bank-YOURFIRSTNAME
+    package:
+        name:  NPSP for Food Banks Kathy Hurchla
+        api_version: '46.0'
+    dependencies:
+        - github: 'https://github.com/SalesforceFoundation/Cumulus'
+
+tasks:
+    robot:
+        options:
+            suites: robot/NPSP-Food-Bank-YOURFIRSTNAME/tests
+            options:
+                outputdir: robot/NPSP-Food-Bank-YOURFIRSTNAME/results
+
+    robot_testdoc:
+        options:
+            path: robot/NPSP-Food-Bank-YOURFIRSTNAME/tests
+            output: robot/NPSP-Food-Bank-YOURFIRSTNAME/doc/NPSP-Food-Bank-YOURFIRSTNAME_tests.html
+
+flows:
+    config_qa:
+        1.1:
+            task: deploy_qa_config
